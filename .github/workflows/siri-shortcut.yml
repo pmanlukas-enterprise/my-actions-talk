@@ -20,7 +20,7 @@ jobs:
           LUIS_APP_ID: ${{ secrets.LUIS_APP_ID }}
           LUIS_APP_KEY: ${{ secrets.LUIS_APP_KEY }}
       - name: create_issue
-        uses: actions/github-script@0.3.0
+        uses: actions/github-script@v3
         env:
           owner: ${{ github.actor }}
           body: ${{ github.event.client_payload.description }}
@@ -31,4 +31,9 @@ jobs:
             const { body, owner, repository } = process.env;
             const title = "New issue report";
             const user_repo = repository.split('/');
-            github.issues.create({ owner, repo: user_repo[1], title, body, labels: [process.env.ISSUE_LABEL] })
+            github.issues.create({
+              ...context.repo,
+              title,
+              body,
+              labels: [process.env.ISSUE_LABEL]
+            });
