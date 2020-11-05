@@ -25,9 +25,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: |
-        cd simple-nodejs-app
-        npm ci
-        npm run build --if-present
-        npm test
+    - run: echo 'hello world!'
    
