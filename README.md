@@ -1,4 +1,4 @@
-# Automate your Workflows With GitHub Actions :tada:
+# Let's Automate your Workflows With GitHub Actions :tada:
 
 This is the repository referenced in [my GitHub Actions talk](https://docs.google.com/presentation/d/1rLTHa2Gp3vvky-ws-wjepFUMKtdGHpym2tTkouuIaJc/edit?usp=sharing). Feel free to reuse the example code provided.
 
