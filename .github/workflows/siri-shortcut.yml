@@ -22,13 +22,11 @@ jobs:
       - name: create_issue
         uses: actions/github-script@v3
         env:
-          owner: ${{ github.actor }}
           body: ${{ github.event.client_payload.description }}
-          repository: ${{ github.repository }}
         with:
           github-token: ${{secrets.PAT_TOKEN}}
           script: |
-            const { body, owner, repository } = process.env;
+            const { body } = process.env;
             const label = process.env.ISSUE_LABEL;
             let title =`New ${label} issue by Siri`;
             github.issues.create({
